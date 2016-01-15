@@ -1,6 +1,6 @@
 package utils;
 
-import com.letsappit.mineautomation.BO.Truck;
+import com.letsappit.mineautomation.Truck.Truck;
 
 import org.json.JSONArray;
 import org.json.JSONException;

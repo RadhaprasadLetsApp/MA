@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.letsappit.mineautomation.BO.GridMenuItem;
+import com.letsappit.mineautomation.Common.GridMenuItem;
 
 import java.util.ArrayList;
 

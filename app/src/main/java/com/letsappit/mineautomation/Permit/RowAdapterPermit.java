@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.letsappit.mineautomation.BO.ListItem;
+import com.letsappit.mineautomation.Common.ListItem;
 import com.letsappit.mineautomation.PrimaryLocation.RowEditorLocation;
 import com.letsappit.mineautomation.R;
 
@@ -55,11 +55,11 @@ public class RowAdapterPermit extends RecyclerView.Adapter<RowAdapterPermit.View
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(this.rowLayout, parent, false);
-        return new RowAdapterPermit.ViewHolder(v);
+        return new ViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(RowAdapterPermit.ViewHolder holder,final int i) {
+    public void onBindViewHolder(ViewHolder holder,final int i) {
         final ListItem table = this.mContent.get(i);
         holder.mTitle.setText(table.getTitle());
         holder.mDescription.setText(table.getDescription());

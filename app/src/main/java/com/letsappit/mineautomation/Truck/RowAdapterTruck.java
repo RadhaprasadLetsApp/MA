@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.letsappit.mineautomation.BO.ListItem;
+import com.letsappit.mineautomation.Common.ListItem;
 import com.letsappit.mineautomation.R;
 
 import java.util.ArrayList;
@@ -54,11 +54,11 @@ public class RowAdapterTruck extends RecyclerView.Adapter<RowAdapterTruck.ViewHo
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(this.rowLayout, parent, false);
-        return new RowAdapterTruck.ViewHolder(v);
+        return new ViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(RowAdapterTruck.ViewHolder holder,final int i) {
+    public void onBindViewHolder(ViewHolder holder,final int i) {
         final ListItem table = this.mContent.get(i);
         holder.mTitle.setText(table.getTitle());
         holder.mDescription.setText(table.getDescription());

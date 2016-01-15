@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.letsappit.mineautomation.BO.PrimaryLocation;
 import com.letsappit.mineautomation.R;
 import com.letsappit.mineautomation.data.DBOps;
 import com.letsappit.mineautomation.data.MAContract;
@@ -29,6 +28,7 @@ String code ;
     private Date datetime;
     private String description;
     int opType=0;
+    int id;
 
     final int  DIALOG_TYPE_PROGRESS = 1,
             DIALOG_TYPE_ALERT = 2, ALERT_TYPE_FAILURE = 2,
@@ -63,7 +63,7 @@ String code ;
             {
                 initializeViews(opType);
                 PrimaryLocation currentPrimaryLocation = DBOps.getLocationByCode(this,code);
-
+id= currentPrimaryLocation.getId();
                 populateViews(currentPrimaryLocation);
 
 
@@ -74,7 +74,7 @@ String code ;
     private void populateViews(PrimaryLocation currentPrimaryLocation) {
         codeEditText.setText(currentPrimaryLocation.getCode());
         descriptionEditText.setText(currentPrimaryLocation.getDescription());
-        updated.setText("Last Updated on :" + Util.getFormatedDate(currentPrimaryLocation.getDatetime()));
+        updated.setText("Last Updated on :" + Util.getFormatedDate(currentPrimaryLocation.getUpdatedOn()));
     }
 
     private void initializeViews(int opType) {
@@ -82,7 +82,7 @@ String code ;
         codeEditText = (EditText) findViewById(R.id.code_edit_text);
         descriptionEditText = (EditText) findViewById(R.id.description_edit_text);
         updated = (TextView) findViewById(R.id.updated_text_view);
-        update = (Button) findViewById(R.id.update_location);
+        update = (Button) findViewById(R.id.update);
         delete = (Button) findViewById(R.id.delete_location);
 
         add = (Button) findViewById(R.id.add_location);
@@ -108,7 +108,7 @@ String code ;
         code = codeEditText.getEditableText().toString();
         description = descriptionEditText.getEditableText().toString();
 
-        long i = DBOps.insertNewLocation(this, new PrimaryLocation(code, description,datetime ));
+        long i = DBOps.insertNewLocation(this, new PrimaryLocation(code, description,datetime ,0));
         if(i!=-1)
         {
             showDialog("Insert Successfull","Entry added successfully",DIALOG_TYPE_ALERT,ALERT_TYPE_SUCCESS);
@@ -124,7 +124,7 @@ String code ;
 public void delete(View v)
 {
 
-   int i =  DBOps.deleteRow(this, code, MAContract.Location.TABLE_NAME, MAContract.Location.COLUMN_CODE);
+   int i =  DBOps.deleteRow(this, code, MAContract.PrimaryLocation.TABLE_NAME, MAContract.PrimaryLocation.COLUMN_CODE);
     if(i==1)
     {
         showDialog("Delete Successfull","Entry deleted successfully",DIALOG_TYPE_ALERT,ALERT_TYPE_SUCCESS);
@@ -141,7 +141,7 @@ public void delete(View v)
         // code = codeEditText.getEditableText().toString();
         description = descriptionEditText.getEditableText().toString();
 
-        int i = DBOps.updateLocation(this, new PrimaryLocation(code, description, datetime));
+        int i = DBOps.updateLocation(this, new PrimaryLocation(code, description, datetime,id));
         if(i==1)
         {
             showDialog("Update Successfull","Entry updated successfully",DIALOG_TYPE_ALERT,ALERT_TYPE_SUCCESS);

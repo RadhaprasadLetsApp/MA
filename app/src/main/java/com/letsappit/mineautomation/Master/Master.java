@@ -8,7 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.widget.Button;
 import android.widget.Spinner;
 
-import com.letsappit.mineautomation.BO.ListItem;
+import com.letsappit.mineautomation.Common.ListItem;
 import com.letsappit.mineautomation.R;
 
 import java.util.ArrayList;

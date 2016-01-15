@@ -1,4 +1,4 @@
-package com.letsappit.mineautomation.BO;
+package com.letsappit.mineautomation.Common;
 
 /**
  * Created by radhaprasadborkar on 28/12/15.

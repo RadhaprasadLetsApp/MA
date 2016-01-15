@@ -12,7 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.letsappit.mineautomation.BO.GridMenuItem;
+import com.letsappit.mineautomation.Common.GridMenuItem;
 import com.letsappit.mineautomation.Master.Master;
 
 import java.util.ArrayList;

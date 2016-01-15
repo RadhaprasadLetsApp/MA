@@ -1,4 +1,4 @@
-package com.letsappit.mineautomation.BO;
+package com.letsappit.mineautomation.Truck;
 
 import java.util.Date;
 
@@ -59,6 +59,7 @@ public class Truck
         this.reg_date = reg_date;
         this.tare_wt = tare_wt;
         this.capacity = capacity;
+
     }
 
     String code;
@@ -70,6 +71,4 @@ public class Truck
     String cat_code;
     Date reg_date;
     int tare_wt,capacity;
-
-
 }

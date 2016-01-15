@@ -22,7 +22,7 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.letsappit.mineautomation.BO.Truck;
+import com.letsappit.mineautomation.Truck.Truck;
 import com.letsappit.mineautomation.data.DBOps;
 import com.nxp.nfclib.classic.IMFClassic;
 import com.nxp.nfclib.icode.IICodeSLI;
@@ -256,7 +256,7 @@ public class IssueTruckTag extends AppCompatActivity {
     }
 
     private void showTruckDetails(String s) throws ParseException {
-        final Truck  selectedTruck = DBOps.getTruckByRegNo(this,s);
+        final Truck selectedTruck = DBOps.getTruckByRegNo(this,s);
         String details = "Truck Code : " + selectedTruck.getCode() +"\n"+
                 "Tare Weight : " + selectedTruck.getTare_wt() +"\n"+
                 "Group : " + selectedTruck.getGroup_code() +"\n"+

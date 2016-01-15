@@ -1,4 +1,4 @@
-package com.letsappit.mineautomation.BO;
+package com.letsappit.mineautomation.Permit;
 
 /**
  * Created by radhaprasadborkar on 05/01/16.

@@ -9,7 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import com.letsappit.mineautomation.BO.ListItem;
+import com.letsappit.mineautomation.Common.ListItem;
 import com.letsappit.mineautomation.PrimaryLocation.RowAdapterLocation;
 import com.letsappit.mineautomation.PrimaryLocation.RowEditorLocation;
 import com.letsappit.mineautomation.R;
@@ -56,7 +56,7 @@ public class TableDetailActivity extends AppCompatActivity {
         switch(tableId)
         {
             case 0:
-                listItemGeneral = DBOps.getAllRows(this, MAContract.Location.TABLE_NAME,MAContract.Location.COLUMN_CODE,MAContract.Location.COLUMN_DESCRIPTION);
+                listItemGeneral = DBOps.getAllRows(this, MAContract.PrimaryLocation.TABLE_NAME,MAContract.PrimaryLocation.COLUMN_CODE,MAContract.PrimaryLocation.COLUMN_DESCRIPTION);
                 RowAdapterLocation rowAdapter = new RowAdapterLocation(listItemGeneral,R.layout.list_item,this);
                 displayTableContents(rowAdapter);
                 opClass = RowEditorLocation.class;

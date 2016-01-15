@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.letsappit.mineautomation.BO.ListItem;
+import com.letsappit.mineautomation.Common.ListItem;
 import com.letsappit.mineautomation.R;
 
 import java.util.ArrayList;
